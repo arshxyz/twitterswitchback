@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  Stop clicking tweet impressions accidneltally
 // @author       github.com/arshxyz
-// @match        https://twitter.com/home
+// @match        https://twitter.com
 // @icon         https://raw.githubusercontent.com/arshxyz/twitterswitchback/main/revlogo.png
 // @grant        none
 // ==/UserScript==
