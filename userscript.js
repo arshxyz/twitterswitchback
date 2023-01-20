@@ -25,7 +25,7 @@
             // check for tweet view where views is shown in different group
             if (icons.length == 1) return;
             // check if already swapped
-            if (icons[2].querySelectorAll("div[data-testid='like']").length == 0) return;
+            if (icons[3].querySelectorAll("div[data-testid='like']").length > 0|| icons[3].querySelectorAll("div[data-testid='unlike']").length > 0) return;
             // bubble viewcount icon to the left
             swapNodes(icons[2], icons[3])
             swapNodes(icons[1], icons[2])
