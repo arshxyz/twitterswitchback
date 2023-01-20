@@ -9,52 +9,52 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     function update(node) {
-      function swapNodes(node1, node2) {
-        const temp = document.createComment('')
-        node2.replaceWith(temp)
-        node1.replaceWith(node2)
-        temp.replaceWith(node1)
-      }
-      let twt = node.querySelectorAll("article[data-testid='tweet']")
-      if (twt.length == 0) return;
-      twt.forEach((tweet) => {
-        let icongroup = tweet.querySelector("div[role='group']")
-        let icons = icongroup.childNodes
-        // check for tweet view where views is shown in different group
-        if (icons.length == 1) return;
-        // check if already swapped
-        if (icons[2].querySelectorAll("div[data-testid='like']").length == 0) return;
-        // bubble viewcount icon to the left
-        swapNodes(icons[2], icons[3])
-        swapNodes(icons[1], icons[2])
-        swapNodes(icons[0], icons[1])
-      })
+        function swapNodes(node1, node2) {
+            const temp = document.createComment('')
+            node2.replaceWith(temp)
+            node1.replaceWith(node2)
+            temp.replaceWith(node1)
+        }
+        let twt = node.querySelectorAll("article[data-testid='tweet']")
+        if (twt.length == 0) return;
+        twt.forEach((tweet) => {
+            let icongroup = tweet.querySelector("div[role='group']")
+            let icons = icongroup.childNodes
+            // check for tweet view where views is shown in different group
+            if (icons.length == 1) return;
+            // check if already swapped
+            if (icons[2].querySelectorAll("div[data-testid='like']").length == 0) return;
+            // bubble viewcount icon to the left
+            swapNodes(icons[2], icons[3])
+            swapNodes(icons[1], icons[2])
+            swapNodes(icons[0], icons[1])
+        })
     }
-    async function main(){
-      const obs = new MutationObserver((mut, ob) => {
-        try {
-            for (const m of mut) {
-                if (m.type === 'attributes') {
-                    update(m.target)
-                  }
-                for (const n of m.addedNodes) {
-                update(n);
+    async function main() {
+        const obs = new MutationObserver((mut, ob) => {
+            try {
+                for (const m of mut) {
+                    if (m.type === 'attributes') {
+                        update(m.target)
+                    }
+                    for (const n of m.addedNodes) {
+                        update(n);
+                    }
                 }
             }
-        }
-        catch (error) {
-        }
-      })
-    
-      obs.observe(document, {
-        childList: true,
-        subtree: true,
-        attributes: true
-      })
-      update(document)
+            catch (error) {
+            }
+        })
+
+        obs.observe(document, {
+            childList: true,
+            subtree: true,
+            attributes: true
+        })
+        update(document)
     }
-    
+
     main();
-    })();
+})();
