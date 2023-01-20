@@ -6,7 +6,7 @@ Stop clicking "View impressions" accidentally on twitter. Put the Like button wh
 <img width="440" alt="image" src="https://user-images.githubusercontent.com/23417273/213728496-0e9cb202-e02b-421a-8594-e2daca7521fa.png">
 
 # Install
-- Install a userscript manager such as [Tampermonkey](https://www.tampermonkey.net/)
+- Install a userscript manager such as [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
 - [Click here](https://raw.githubusercontent.com/arshxyz/twitterswitchback/main/twtscript.user.js) to install the script
 # Alternatively
 Paste the following code into your console to use the script without Tampermonkey. Does not persist through reloads.
