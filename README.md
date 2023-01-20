@@ -1,4 +1,7 @@
-Stop clicking "View impressions" accidentally on twitter. Put the Like button where it belongs.
+<img width="100" alt="logo" src="https://raw.githubusercontent.com/arshxyz/twitterswitchback/main/revlogo.png">
+
+### Put the Like button where it belongs 
+
 ## Before
 <img width="440" alt="image" src="https://user-images.githubusercontent.com/23417273/213728686-875c2173-6902-48cb-982f-e88b990aa95d.png">
 
